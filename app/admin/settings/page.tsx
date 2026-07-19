@@ -220,15 +220,51 @@ export default function AdminSettingsPage() {
       {activeTab === 'general' && (
         <div className="bg-primary-bg p-6 md:p-8 rounded-3xl border border-gray-150 shadow-sm max-w-xl">
           <form onSubmit={handleSaveGeneral} className="flex flex-col gap-5 text-xs text-text-secondary font-semibold">
-            <div className="flex flex-col gap-2 mb-4 pb-4 border-b border-gray-100">
+            <div className="flex flex-col gap-3 mb-4 pb-5 border-b border-gray-100">
               <label className="text-xs font-bold text-text-secondary uppercase">Site Brand Logo</label>
+              
+              {/* Logo Live Preview Strip */}
+              {logoUrl && (
+                <div className="flex flex-col gap-2 rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
+                  {/* Light background preview */}
+                  <div className="bg-white flex items-center justify-center px-8 py-5 border-b border-gray-100">
+                    <img
+                      src={logoUrl}
+                      alt="Logo preview (light)"
+                      className="h-16 w-auto object-contain"
+                      style={{ filter: 'drop-shadow(0 2px 8px rgba(6,78,59,0.12))' }}
+                    />
+                  </div>
+                  {/* Dark background preview */}
+                  <div className="bg-[#121E19] flex items-center justify-center px-8 py-5">
+                    <img
+                      src={logoUrl}
+                      alt="Logo preview (dark)"
+                      className="h-16 w-auto object-contain"
+                      style={{ filter: 'drop-shadow(0 2px 12px rgba(201,162,39,0.25)) brightness(1.08)' }}
+                    />
+                  </div>
+                  {/* Action row */}
+                  <div className="flex items-center justify-between px-4 py-2 bg-secondary-bg">
+                    <span className="text-[10px] text-text-soft font-semibold uppercase tracking-wide">Logo previewed on light &amp; dark backgrounds</span>
+                    <button
+                      type="button"
+                      onClick={() => setLogoUrl('')}
+                      className="text-[10px] text-red-500 hover:text-red-700 font-bold uppercase tracking-wide cursor-pointer"
+                    >
+                      Remove Logo
+                    </button>
+                  </div>
+                </div>
+              )}
+
               <ImageUploader
                 images={logoUrl ? [logoUrl] : []}
                 onChange={(urls) => setLogoUrl(urls[0] || '')}
                 folder="settings"
               />
-              <span className="text-[10px] text-text-soft font-normal mt-1 leading-relaxed">
-                Upload a custom logo image (PNG/WebP recommended with transparent background). If left empty, a styled typographic logo is displayed.
+              <span className="text-[10px] text-text-soft font-normal leading-relaxed">
+                Upload PNG or WebP with transparent background for best results. Logo will be displayed at 64px height across the website.
               </span>
             </div>
 

@@ -127,9 +127,9 @@ export default function ImageUploader({
           {images.map((url, idx) => (
             <div
               key={idx}
-              className="relative w-20 h-20 bg-secondary-bg border border-gray-100 rounded-lg overflow-hidden group shadow-sm"
+              className="relative w-28 h-20 bg-secondary-bg border border-gray-200 rounded-xl overflow-hidden group shadow-sm flex items-center justify-center p-1"
             >
-              <img src={url} alt="upload thumbnail" className="w-full h-full object-cover" />
+              <img src={url} alt="upload preview" className="w-full h-full object-contain" />
               <button
                 type="button"
                 onClick={() => handleDelete(idx)}

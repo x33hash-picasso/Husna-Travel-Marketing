@@ -61,20 +61,27 @@ export default function Navbar({ locale }: { locale: string }) {
           {/* Logo & Branding */}
           <Link href="/" className="flex items-center gap-3 group">
             {logoUrl ? (
-              <img src={logoUrl} alt="Logo" className="h-10 w-auto object-contain transition-transform group-hover:scale-105" />
+              <img
+                src={logoUrl}
+                alt="Husna Travel & Marketing Logo"
+                className="h-12 md:h-16 w-auto object-contain transition-all duration-300 group-hover:scale-105"
+                style={{ filter: 'drop-shadow(0 2px 8px rgba(6,78,59,0.18))' }}
+              />
             ) : (
-              <div className="w-10 h-10 bg-emerald-medium text-white flex items-center justify-center rounded-full font-serif font-bold text-xl border border-gold-medium shadow-md transition-transform group-hover:scale-105">
-                ح
-              </div>
+              <>
+                <div className="w-11 h-11 bg-emerald-medium text-white flex items-center justify-center rounded-full font-serif font-bold text-2xl border-2 border-gold-medium shadow-md transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:border-gold-dark">
+                  ح
+                </div>
+                <div className="flex flex-col">
+                  <span className="font-serif font-bold text-lg md:text-xl text-emerald-dark tracking-wide leading-tight group-hover:text-emerald-medium transition-colors">
+                    Husna Travel
+                  </span>
+                  <span className="text-[10px] uppercase font-bold tracking-widest text-gold-dark mt-[-2px]">
+                    {locale === 'ur' ? 'اور مارکیٹنگ' : '& Marketing'}
+                  </span>
+                </div>
+              </>
             )}
-            <div className="flex flex-col">
-              <span className="font-serif font-bold text-lg md:text-xl text-emerald-dark tracking-wide leading-tight group-hover:text-emerald-medium transition-colors">
-                Husna Travel
-              </span>
-              <span className="text-[10px] uppercase font-bold tracking-widest text-gold-dark mt-[-2px]">
-                {locale === 'ur' ? 'اور مارکیٹنگ' : '& Marketing'}
-              </span>
-            </div>
           </Link>
 
           {/* Desktop Navigation Links */}

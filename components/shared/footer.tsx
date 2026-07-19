@@ -31,15 +31,22 @@ export default function Footer({ locale }: { locale: string }) {
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-3">
             {logoUrl ? (
-              <img src={logoUrl} alt="Logo" className="h-10 w-auto object-contain" />
+              <img
+                src={logoUrl}
+                alt="Husna Travel & Marketing Logo"
+                className="h-14 w-auto object-contain"
+                style={{ filter: 'drop-shadow(0 2px 12px rgba(201,162,39,0.25)) brightness(1.08)' }}
+              />
             ) : (
-              <div className="w-10 h-10 bg-emerald-medium text-white flex items-center justify-center rounded-full font-serif font-bold text-xl border border-gold-medium shadow-md">
-                ح
-              </div>
+              <>
+                <div className="w-11 h-11 bg-emerald-medium text-white flex items-center justify-center rounded-full font-serif font-bold text-2xl border-2 border-gold-medium shadow-md">
+                  ح
+                </div>
+                <span className="font-serif font-bold text-xl text-white tracking-wide">
+                  Husna Travel
+                </span>
+              </>
             )}
-            <span className="font-serif font-bold text-xl text-white tracking-wide">
-              Husna Travel
-            </span>
           </div>
           <p className="text-sm text-gray-400 leading-relaxed max-w-xs">
             {locale === 'ur'
