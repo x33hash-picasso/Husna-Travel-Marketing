@@ -55,7 +55,7 @@ export default function AdminSidebar() {
       <div>
          <div className="flex items-center gap-3 mb-8">
           {logoUrl ? (
-            <img src={logoUrl} alt="Logo" className="w-9 h-9 rounded-full object-cover border border-gold-medium" />
+            <img src={logoUrl} alt="Logo" className="h-9 w-auto object-contain max-w-[80px]" style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.15))' }} />
           ) : (
             <div className="w-9 h-9 bg-emerald-medium text-white flex items-center justify-center rounded-full font-serif font-bold text-lg border border-gold-medium shadow-md">
               ح

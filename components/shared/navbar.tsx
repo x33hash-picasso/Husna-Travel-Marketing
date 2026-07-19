@@ -59,26 +59,26 @@ export default function Navbar({ locale }: { locale: string }) {
       >
         <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
           {/* Logo & Branding */}
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-1.5 sm:gap-3 group min-w-0">
             {/* Logo image or fallback badge */}
             {logoUrl ? (
               <img
                 src={logoUrl}
                 alt="Husna Travel & Marketing Logo"
-                className="h-12 md:h-16 w-auto object-contain transition-all duration-300 group-hover:scale-105"
+                className="h-10 sm:h-12 md:h-16 w-auto object-contain transition-all duration-300 group-hover:scale-105 shrink-0"
                 style={{ filter: 'drop-shadow(0 2px 8px rgba(6,78,59,0.18))' }}
               />
             ) : (
-              <div className="w-11 h-11 bg-emerald-medium text-white flex items-center justify-center rounded-full font-serif font-bold text-2xl border-2 border-gold-medium shadow-md transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:border-gold-dark">
+              <div className="w-9 h-9 sm:w-11 sm:h-11 bg-emerald-medium text-white flex items-center justify-center rounded-full font-serif font-bold text-xl sm:text-2xl border-2 border-gold-medium shadow-md transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:border-gold-dark shrink-0">
                 ح
               </div>
             )}
             {/* Brand name — always visible beside logo */}
-            <div className="flex flex-col">
-              <span className="font-serif font-bold text-lg md:text-xl text-emerald-dark tracking-wide leading-tight group-hover:text-emerald-medium transition-colors">
+            <div className="flex flex-col min-w-0">
+              <span className="font-serif font-bold text-sm sm:text-base md:text-xl text-emerald-dark tracking-wide leading-tight group-hover:text-emerald-medium transition-colors truncate">
                 Husna Travel
               </span>
-              <span className="text-[10px] uppercase font-bold tracking-widest text-gold-dark mt-[-2px]">
+              <span className="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-gold-dark mt-[-2px] hidden min-[400px]:block">
                 {locale === 'ur' ? 'اور مارکیٹنگ' : '& Marketing'}
               </span>
             </div>
