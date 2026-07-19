@@ -1,0 +1,106 @@
+{
+  "Navbar": {
+    "home": "Home",
+    "umrahPackages": "Umrah Packages",
+    "islamicProducts": "Islamic Products",
+    "herbalProducts": "Herbal Products",
+    "aboutUs": "About Us",
+    "contact": "Contact",
+    "cart": "Cart",
+    "whatsapp": "WhatsApp"
+  },
+  "Hero": {
+    "title1": "Your Sacred Journey",
+    "title2": "Begins Here",
+    "subtitle": "Premium Umrah Packages, Islamic Products & Natural Wellness — Curated with Trust, Care and Excellence.",
+    "explorePackages": "Explore Umrah Packages",
+    "shopIslamic": "Shop Islamic Collection",
+    "talkExpert": "Talk to Our Travel Expert"
+  },
+  "Counters": {
+    "years": "Years Experience",
+    "customers": "Happy Customers",
+    "journeys": "Umrah Journeys",
+    "products": "Premium Products"
+  },
+  "Sections": {
+    "featuredPackages": "Featured Umrah Packages",
+    "featuredPackagesSub": "Curated Journeys to the Holy Cities",
+    "islamicCollection": "Islamic Collection",
+    "islamicCollectionSub": "Premium Islamic Products for Your Spiritual Journey",
+    "naturalWellness": "Natural Wellness",
+    "naturalWellnessSub": "Premium Herbal & Organic Products",
+    "howItWorks": "How It Works",
+    "howItWorksSub": "Embark on your journey in four simple steps",
+    "whyChooseUs": "Why Choose Husna",
+    "whyChooseUsSub": "Dedicated to making your journey comfortable and memorable",
+    "testimonials": "What Our Pilgrims Say",
+    "testimonialsSub": "Real stories from those who journeyed with us",
+    "faq": "Frequently Asked Questions",
+    "faqSub": "Everything you need to know about our services and packages"
+  },
+  "Common": {
+    "viewDetails": "View Details",
+    "bookNow": "Book Now",
+    "whatsappOrder": "Order via WhatsApp",
+    "whatsappInquiry": "Inquire via WhatsApp",
+    "addToCart": "Add to Cart",
+    "addedToCart": "Added to Cart!",
+    "quickView": "Quick View",
+    "wishlist": "Wishlist",
+    "currency": "Rs.",
+    "duration": "{days} Days",
+    "startingFrom": "Starting From",
+    "hotels": "Hotels",
+    "makkah": "Makkah",
+    "madinah": "Madinah",
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock",
+    "price": "Price",
+    "quantity": "Quantity",
+    "total": "Total",
+    "checkout": "Checkout",
+    "submit": "Submit",
+    "sending": "Sending...",
+    "error": "Something went wrong",
+    "success": "Success!"
+  },
+  "Cart": {
+    "title": "Your Shopping Cart",
+    "empty": "Your cart is empty.",
+    "summary": "Order Summary",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "free": "Free",
+    "total": "Total",
+    "proceedCheckout": "Proceed to Checkout",
+    "removeItem": "Remove"
+  },
+  "Checkout": {
+    "title": "Checkout",
+    "billingDetails": "Billing & Delivery Details",
+    "fullName": "Full Name",
+    "phoneNumber": "Phone Number",
+    "email": "Email Address",
+    "shippingAddress": "Shipping Address",
+    "notes": "Additional Notes (optional)",
+    "orderSummary": "Order Summary",
+    "placeOrder": "Place Order (COD)",
+    "placeOrderWhatsapp": "Order via WhatsApp",
+    "validation": {
+      "nameRequired": "Name is required",
+      "phoneRequired": "Phone number is required",
+      "addressRequired": "Shipping address is required"
+    }
+  },
+  "PackageBooking": {
+    "title": "Book Your Sacred Journey",
+    "travelerCount": "Number of Travelers",
+    "travelDate": "Preferred Travel Date",
+    "selectRoom": "Select Room Type",
+    "pricePerPerson": "Price per Person",
+    "totalAmount": "Total Estimated Amount",
+    "whatsappSubmit": "Submit Inquiry via WhatsApp",
+    "formSubmit": "Submit Booking Inquiry"
+  }
+}

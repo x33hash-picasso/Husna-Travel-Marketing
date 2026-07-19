@@ -1,0 +1,106 @@
+{
+  "Navbar": {
+    "home": "ہوم",
+    "umrahPackages": "عمرہ پیکجز",
+    "islamicProducts": "اسلامی مصنوعات",
+    "herbalProducts": "ہربل مصنوعات",
+    "aboutUs": "ہمارے بارے میں",
+    "contact": "رابطہ کریں",
+    "cart": "کارٹ",
+    "whatsapp": "واٹس ایپ"
+  },
+  "Hero": {
+    "title1": "آپ کا مقدس سفر",
+    "title2": "یہاں سے شروع ہوتا ہے",
+    "subtitle": "پریمیم عمرہ پیکجز، اسلامی مصنوعات اور قدرتی صحت — جو بھروسے، دیکھ بھال اور عمدگی کے ساتھ تیار کی گئی ہیں۔",
+    "explorePackages": "عمرہ پیکجز دیکھیں",
+    "shopIslamic": "اسلامی کلیکشن خریدیں",
+    "talkExpert": "ہمارے سفری ماہر سے بات کریں"
+  },
+  "Counters": {
+    "years": "سال کا تجربہ",
+    "customers": "خوش حال کسٹمرز",
+    "journeys": "عمرہ کے اسفار",
+    "products": "اعلیٰ معیار کی مصنوعات"
+  },
+  "Sections": {
+    "featuredPackages": "نمایاں عمرہ پیکجز",
+    "featuredPackagesSub": "مقدس شہروں کے لیے بہترین سفری اسفار",
+    "islamicCollection": "اسلامی مجموعہ",
+    "islamicCollectionSub": "آپ کے روحانی سفر کے لیے پریمیم اسلامی مصنوعات",
+    "naturalWellness": "قدرتی تندرستی",
+    "naturalWellnessSub": "پریمیم ہربل اور نامیاتی مصنوعات",
+    "howItWorks": "کام کرنے کا طریقہ",
+    "howItWorksSub": "چار آسان مراحل میں اپنے مقدس سفر کا آغاز کریں",
+    "whyChooseUs": "حسنیٰ کا انتخاب کیوں؟",
+    "whyChooseUsSub": "آپ کے سفر کو آرام دہ اور یادگار بنانے کے لیے ہم کوشاں ہیں",
+    "testimonials": "ہمارے زائرین کی رائے",
+    "testimonialsSub": "ان لوگوں کے حقیقی تاثرات جنہوں نے ہمارے ساتھ سفر کیا",
+    "faq": "اکثر پوچھے گئے سوالات",
+    "faqSub": "ہماری خدمات اور پیکجز کے بارے میں وہ سب کچھ جو آپ جاننا چاہتے ہیں"
+  },
+  "Common": {
+    "viewDetails": "تفصیلات دیکھیں",
+    "bookNow": "ابھی بک کریں",
+    "whatsappOrder": "واٹس ایپ پر آرڈر کریں",
+    "whatsappInquiry": "واٹس ایپ پر معلومات حاصل کریں",
+    "addToCart": "کارٹ میں شامل کریں",
+    "addedToCart": "کارٹ میں شامل ہو گیا!",
+    "quickView": "فوری نظارہ",
+    "wishlist": "پسندیدہ",
+    "currency": "روپے",
+    "duration": "{days} دن",
+    "startingFrom": "شروع قیمت",
+    "hotels": "ہوٹلز",
+    "makkah": "مکہ مکرمہ",
+    "madinah": "مدینہ منورہ",
+    "inStock": "موجود ہے",
+    "outOfStock": "ختم ہو گیا",
+    "price": "قیمت",
+    "quantity": "مقدار",
+    "total": "کل رقم",
+    "checkout": "چیک آؤٹ",
+    "submit": "جمع کریں",
+    "sending": "بھیجا جا رہا ہے...",
+    "error": "کوئی خرابی پیش آگئی",
+    "success": "کامیابی!"
+  },
+  "Cart": {
+    "title": "آپ کا شاپنگ کارٹ",
+    "empty": "آپ کا کارٹ خالی ہے۔",
+    "summary": "آرڈر کی تفصیل",
+    "subtotal": "جزوی کل",
+    "shipping": "شپنگ",
+    "free": "مفت",
+    "total": "کل رقم",
+    "proceedCheckout": "چیک آؤٹ پر جائیں",
+    "removeItem": "حذف کریں"
+  },
+  "Checkout": {
+    "title": "چیک آؤٹ",
+    "billingDetails": "بلنگ اور ترسیل کی تفصیلات",
+    "fullName": "پورا نام",
+    "phoneNumber": "فون نمبر",
+    "email": "ای میل ایڈریس",
+    "shippingAddress": "ترسیل کا پتہ",
+    "notes": "اضافی نوٹس (اختیاری)",
+    "orderSummary": "آرڈر کی تفصیل",
+    "placeOrder": "آرڈر دیں (کیش آن ڈیلیوری)",
+    "placeOrderWhatsapp": "واٹس ایپ پر آرڈر دیں",
+    "validation": {
+      "nameRequired": "نام درج کرنا ضروری ہے",
+      "phoneRequired": "فون نمبر درج کرنا ضروری ہے",
+      "addressRequired": "ترسیل کا پتہ درج کرنا ضروری ہے"
+    }
+  },
+  "PackageBooking": {
+    "title": "اپنے مقدس سفر کی بکنگ کریں",
+    "travelerCount": "مسافروں کی تعداد",
+    "travelDate": "سفر کی ترجیحی تاریخ",
+    "selectRoom": "کمرے کی قسم منتخب کریں",
+    "pricePerPerson": "قیمت فی کس",
+    "totalAmount": "کل تخمینی رقم",
+    "whatsappSubmit": "واٹس ایپ کے ذریعے انکوائری بھیجیں",
+    "formSubmit": "بکنگ انکوائری جمع کریں"
+  }
+}

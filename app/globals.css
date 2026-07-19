@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+
+  --color-primary-bg: #FFFFFF;
+  --color-secondary-bg: #F9F8F6;
+  --color-tertiary-bg: #F0EDE6;
+  
+  --color-emerald-dark: #064E3B;
+  --color-emerald-medium: #047857;
+  --color-emerald-light: #10B981;
+  --color-emerald-lighter: #D1FAE5;
+  
+  --color-gold-dark: #C9A227;
+  --color-gold-medium: #D4AF37;
+  --color-gold-light: #F5D76E;
+  --color-gold-lighter: #FEF3C7;
+  
+  --color-text-primary: #1F2937;
+  --color-text-secondary: #6B7280;
+  --color-text-soft: #9CA3AF;
+  
+  --color-accent-charcoal: #374151;
+  --color-accent-sand: #D2B48C;
+  --color-accent-soft-beige: #E8DCC8;
+}
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #1F2937;
+}
+
+/* Force light theme - no dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #FFFFFF;
+    --foreground: #1F2937;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F9F8F6;
+}
+::-webkit-scrollbar-thumb {
+  background: #047857;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #064E3B;
+}
+
+/* Glassmorphism Classes */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(229, 231, 235, 0.5);
+}
+
+.glass-card-emerald {
+  background: rgba(4, 120, 87, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(4, 120, 87, 0.15);
+}
+
+/* Islamic Geometric Pattern Overlay */
+.islamic-pattern {
+  background-image: radial-gradient(circle at 1px 1px, rgba(212, 175, 55, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
