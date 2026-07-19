@@ -30,6 +30,7 @@ export default function Footer({ locale }: { locale: string }) {
         {/* About Company */}
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-3">
+            {/* Logo image or fallback badge */}
             {logoUrl ? (
               <img
                 src={logoUrl}
@@ -38,15 +39,14 @@ export default function Footer({ locale }: { locale: string }) {
                 style={{ filter: 'drop-shadow(0 2px 12px rgba(201,162,39,0.25)) brightness(1.08)' }}
               />
             ) : (
-              <>
-                <div className="w-11 h-11 bg-emerald-medium text-white flex items-center justify-center rounded-full font-serif font-bold text-2xl border-2 border-gold-medium shadow-md">
-                  ح
-                </div>
-                <span className="font-serif font-bold text-xl text-white tracking-wide">
-                  Husna Travel
-                </span>
-              </>
+              <div className="w-11 h-11 bg-emerald-medium text-white flex items-center justify-center rounded-full font-serif font-bold text-2xl border-2 border-gold-medium shadow-md">
+                ح
+              </div>
             )}
+            {/* Brand name — always visible beside logo */}
+            <span className="font-serif font-bold text-xl text-white tracking-wide">
+              Husna Travel
+            </span>
           </div>
           <p className="text-sm text-gray-400 leading-relaxed max-w-xs">
             {locale === 'ur'
