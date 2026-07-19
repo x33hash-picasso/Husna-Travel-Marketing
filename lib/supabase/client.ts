@@ -20,11 +20,11 @@ export const supabase = isSupabaseConfigured
 // ==========================================
 
 const MOCK_CATEGORIES = [
-  { id: 'cat-1', name_en: 'Quran & Islamic Books', name_ur: 'قرآن اور اسلامی کتب', slug: 'quran-books', type: 'product', image_url: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=400&q=80', is_active: true },
-  { id: 'cat-2', name_en: 'Prayer Mats & Accessories', name_ur: 'جائے نماز اور لوازمات', slug: 'prayer-mats', type: 'product', image_url: 'https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?auto=format&fit=crop&w=400&q=80', is_active: true },
-  { id: 'cat-3', name_en: 'Attar & Fragrances', name_ur: 'عطر اور خوشبوئیں', slug: 'attar-fragrances', type: 'product', image_url: 'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=400&q=80', is_active: true },
-  { id: 'cat-4', name_en: 'Premium Honey', name_ur: 'خالص شہد', slug: 'honey', type: 'herbal', image_url: 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=400&q=80', is_active: true },
-  { id: 'cat-5', name_en: 'Black Seed & Wellness', name_ur: 'کلونجی اور تندرستی', slug: 'black-seed', type: 'herbal', image_url: 'https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&w=400&q=80', is_active: true }
+  { id: 'cat-1', name_en: 'Quran & Islamic Books', name_ur: 'قرآن اور اسلامی کتب', slug: 'quran-books', type: 'product', image_url: '/images/islamic_lifestyle.jpg', is_active: true },
+  { id: 'cat-2', name_en: 'Prayer Mats & Accessories', name_ur: 'جائے نماز اور لوازمات', slug: 'prayer-mats', type: 'product', image_url: '/images/islamic_lifestyle.jpg', is_active: true },
+  { id: 'cat-3', name_en: 'Attar & Fragrances', name_ur: 'عطر اور خوشبوئیں', slug: 'attar-fragrances', type: 'product', image_url: '/images/Perfume.jpg', is_active: true },
+  { id: 'cat-4', name_en: 'Premium Honey', name_ur: 'خالص شہد', slug: 'honey', type: 'herbal', image_url: '/images/herbal_wellness.jpg', is_active: true },
+  { id: 'cat-5', name_en: 'Black Seed & Wellness', name_ur: 'کلونجی اور تندرستی', slug: 'black-seed', type: 'herbal', image_url: '/images/herbal_wellness.jpg', is_active: true }
 ];
 
 const MOCK_ROOM_TYPES = [
@@ -49,7 +49,7 @@ const MOCK_PRODUCTS = [
     stock: 50,
     featured: true,
     published: true,
-    images: ['https://images.unsplash.com/photo-1609599006353-e629f1d29718?auto=format&fit=crop&w=800&q=80']
+    images: ['/images/islamic_lifestyle.jpg']
   },
   {
     id: 'prod-2',
@@ -65,7 +65,7 @@ const MOCK_PRODUCTS = [
     stock: 35,
     featured: true,
     published: true,
-    images: ['https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?auto=format&fit=crop&w=800&q=80']
+    images: ['/images/islamic_lifestyle.jpg']
   },
   {
     id: 'prod-3',
@@ -81,7 +81,7 @@ const MOCK_PRODUCTS = [
     stock: 100,
     featured: true,
     published: true,
-    images: ['https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=800&q=80']
+    images: ['/images/Perfume.jpg']
   },
   {
     id: 'prod-4',
@@ -97,7 +97,7 @@ const MOCK_PRODUCTS = [
     stock: 40,
     featured: true,
     published: true,
-    images: ['https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=800&q=80']
+    images: ['/images/herbal_wellness.jpg']
   },
   {
     id: 'prod-5',
@@ -113,7 +113,23 @@ const MOCK_PRODUCTS = [
     stock: 80,
     featured: true,
     published: true,
-    images: ['https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&w=800&q=80']
+    images: ['/images/herbal_wellness.jpg']
+  },
+  {
+    id: 'prod-6',
+    category_id: 'cat-5',
+    name_en: 'Spicy Mango Pickle (Aam ka Achaar)',
+    name_ur: 'چٹپٹا آم کا اچار',
+    slug: 'spicy-mango-pickle',
+    description_en: 'Authentic home-made Pakistani mango pickle prepared using premium mustard oil and organic spices.',
+    description_ur: 'خالص سرسوں کے تیل اور مصالحہ جات سے تیار کردہ گھر کا لذیذ آم کا اچار۔',
+    price: 950,
+    sale_price: 790,
+    sku: 'PCL-MNG-06',
+    stock: 60,
+    featured: true,
+    published: true,
+    images: ['/images/aam_ka_achaar.jpeg']
   }
 ];
 
@@ -133,7 +149,7 @@ const MOCK_PACKAGES = [
     features: ['Visa processing', '4-Star Hotels', 'AC Bus Transport', 'Ziyarat tours in Makkah & Madinah'],
     featured: true,
     published: true,
-    images: ['https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=80'],
+    images: ['/images/makkah_hero.jpg'],
     pricing: [
       { room_type_id: 'rt-sharing', price_per_person: 235000 },
       { room_type_id: 'rt-quad', price_per_person: 239000 },
@@ -156,7 +172,7 @@ const MOCK_PACKAGES = [
     features: ['Visa processing', 'Luxury 5-Star Hotels', 'Private Car Transport', '24/7 dedicated local guide', 'Buffet breakfast included'],
     featured: true,
     published: true,
-    images: ['https://images.unsplash.com/photo-1591604021695-0c69b7c05981?auto=format&fit=crop&w=800&q=80'],
+    images: ['/images/islamic_lifestyle.jpg'],
     pricing: [
       { room_type_id: 'rt-sharing', price_per_person: 260000 },
       { room_type_id: 'rt-triple', price_per_person: 280000 },
@@ -178,7 +194,7 @@ const MOCK_PACKAGES = [
     features: ['VIP Fast-track Visa', 'Kaaba View rooms', 'Haramain Bullet Train Business ticket', 'Private tours', 'All meals included'],
     featured: false,
     published: true,
-    images: ['https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=800&q=80'],
+    images: ['/images/makkah_hero.jpg'],
     pricing: [
       { room_type_id: 'rt-triple', price_per_person: 330000 },
       { room_type_id: 'rt-double', price_per_person: 350000 }
@@ -199,7 +215,7 @@ const MOCK_PACKAGES = [
     features: ['Visa services', 'Family suites', 'Wheelchair assistance', 'Dedicated guide support', 'Buffet meals'],
     featured: false,
     published: true,
-    images: ['https://images.unsplash.com/photo-1590076212522-8241b714be8b?auto=format&fit=crop&w=800&q=80'],
+    images: ['/images/islamic_lifestyle.jpg'],
     pricing: [
       { room_type_id: 'rt-quad', price_per_person: 275000 },
       { room_type_id: 'rt-triple', price_per_person: 285000 },
@@ -243,19 +259,77 @@ const setStored = (key: string, value: any) => {
   }
 };
 
-// Initialize LocalStorage Database if empty
+// Initialize LocalStorage Database if empty or needs migration
 const initLocalDb = () => {
   if (typeof window === 'undefined') return;
-  if (!localStorage.getItem('husna_initialized')) {
+  
+  const migrationKey = 'husna_local_images_loaded_v5';
+  const needsMigration = !localStorage.getItem(migrationKey);
+
+  if (!localStorage.getItem('husna_initialized') || needsMigration) {
+    // Clear old data to force fresh load of local images
+    localStorage.removeItem('husna_categories');
+    localStorage.removeItem('husna_room_types');
+    localStorage.removeItem('husna_products');
+    localStorage.removeItem('husna_packages');
+    localStorage.removeItem('husna_testimonials');
+    localStorage.removeItem('husna_faqs');
+
+    // Force logo path to local image
+    localStorage.setItem('husna_setting_site_logo', JSON.stringify('/images/logo.jpeg'));
+
+    // Force journey settings path to local images
+    const journey = {
+      makkahImage: '/images/makkah_hero.jpg',
+      madinahImage: '/images/islamic_lifestyle.jpg',
+      badgeEn: 'Spiritual Journey',
+      badgeUr: 'روحانی جذبہ',
+      titleEn: 'A Journey of Faith and Eternal Tranquility',
+      titleUr: 'مقدس مقامات کی دلکش روحانی فضائیں',
+      descriptionEn: 'Husna Travel is built upon the pillars of absolute trust and luxury hospitality. We design journeys that elevate your spiritual experience, allowing you to immerse completely in worship, reflection, and historical exploration without any earthly worries.',
+      descriptionUr: 'ہمارا مشن آپ کو زندگی بھر کے سب سے یادگار اور مبارک سفر پر لے جانا ہے۔ مکہ مکرمہ کی پروقار فضاؤں اور مدینہ منورہ کے پرسکون گلیوں میں آپ کی آرام دہ اور پرسکون رہائش ہماری اولین ترجیح ہے۔',
+      f1TitleEn: 'Fully Certified and Registered',
+      f1TitleUr: 'سرکاری اور رجسٹرڈ کارپوریشن',
+      f1DescEn: 'Lincensed by the Ministry of Hajj & Umrah for complete verification and compliance.',
+      f1DescUr: 'وزارت مذہبی امور پاکستان سے رجسٹرڈ اور لائسنس یافتہ سفری ایجنسی۔',
+      f2TitleEn: 'Exceptional Pilgrim Care',
+      f2TitleUr: 'حقیقی مہمان نوازی اور خدمت',
+      f2DescEn: 'From visa processing and hotels to Islamic wellness products delivered right to your doorstep.',
+      f2DescUr: 'سفر، ویزا اور ہوٹل سے لے کر کتب اور حرمین کے تبرکات تک مکمل دیکھ بھال۔'
+    };
+    localStorage.setItem('husna_setting_journey_settings', JSON.stringify(journey));
+
+    // Force slides path to local images
+    const slides = [
+      {
+        image: '/images/makkah_hero.jpg',
+        titleEn: 'Your Sacred Journey',
+        titleUr: 'آپ کا مقدس سفر',
+        subtitleEn: 'Begins Here',
+        subtitleUr: 'یہاں سے شروع ہوتا ہے'
+      },
+      {
+        image: '/images/islamic_lifestyle.jpg',
+        titleEn: 'Masjid al-Haram',
+        titleUr: 'مسجد الحرام',
+        subtitleEn: 'Spiritual Peace',
+        subtitleUr: 'روحانی سکون اور اطمینان'
+      }
+    ];
+    localStorage.setItem('husna_setting_hero_slides', JSON.stringify(slides));
+
     setStored('categories', MOCK_CATEGORIES);
     setStored('room_types', MOCK_ROOM_TYPES);
     setStored('products', MOCK_PRODUCTS);
     setStored('packages', MOCK_PACKAGES);
     setStored('testimonials', MOCK_TESTIMONIALS);
     setStored('faqs', MOCK_FAQS);
-    setStored('orders', []);
-    setStored('inquiries', []);
+    
+    if (!localStorage.getItem('husna_orders')) setStored('orders', []);
+    if (!localStorage.getItem('husna_inquiries')) setStored('inquiries', []);
+
     localStorage.setItem('husna_initialized', 'true');
+    localStorage.setItem(migrationKey, 'true');
   }
 };
 

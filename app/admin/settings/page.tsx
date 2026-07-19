@@ -7,14 +7,14 @@ import { Save, Plus, Trash2, ArrowUp, ArrowDown, Settings, Sliders, Compass } fr
 
 const DEFAULT_SLIDES = [
   {
-    image: 'https://images.unsplash.com/photo-1591604021695-0c69b7c05981?auto=format&fit=crop&w=1920&q=80',
+    image: '/images/islamic_lifestyle.jpg',
     titleEn: 'Your Sacred Journey',
     titleUr: 'آپ کا مقدس سفر',
     subtitleEn: 'Begins Here',
     subtitleUr: 'یہاں سے شروع ہوتا ہے'
   },
   {
-    image: 'https://images.unsplash.com/photo-1591604021695-0c69b7c05981?auto=format&fit=crop&w=1920&q=80',
+    image: '/images/makkah_hero.jpg',
     titleEn: 'Masjid al-Haram',
     titleUr: 'مسجد الحرام',
     subtitleEn: 'Spiritual Peace',
@@ -23,9 +23,10 @@ const DEFAULT_SLIDES = [
 ];
 
 const DEFAULT_JOURNEY = {
-  makkahImage: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=600&q=80',
-  madinahImage: 'https://images.unsplash.com/photo-1591604021695-0c69b7c05981?auto=format&fit=crop&w=600&q=80',
+  makkahImage: '/images/makkah_hero.jpg',
+  madinahImage: '/images/islamic_lifestyle.jpg',
   badgeEn: 'Spiritual Journey',
+// ... rest of your code
   badgeUr: 'روحانی جذبہ',
   titleEn: 'A Journey of Faith and Eternal Tranquility',
   titleUr: 'مقدس مقامات کی دلکش روحانی فضائیں',
@@ -134,7 +135,7 @@ export default function AdminSettingsPage() {
 
   const addSlide = () => {
     const newSlide = {
-      image: 'https://images.unsplash.com/photo-1591604021695-0c69b7c05981?auto=format&fit=crop&w=1920&q=80',
+      image: '/images/islamic_lifestyle.jpg',
       titleEn: 'New Journey Slide',
       titleUr: 'نیا سفر سلائیڈ',
       subtitleEn: 'Sacred Vibe',

@@ -8,39 +8,32 @@ import { generateWhatsAppLink } from '@/lib/whatsapp/message-generator';
 
 const SLIDES = [
   {
-    image: 'https://images.unsplash.com/photo-1591604021695-0c69b7c05981?auto=format&fit=crop&w=1920&q=80',
+    image: '/images/makkah_hero.jpg',
     titleEn: 'Your Sacred Journey',
     titleUr: 'آپ کا مقدس سفر',
     subtitleEn: 'Begins Here',
     subtitleUr: 'یہاں سے شروع ہوتا ہے'
   },
   {
-    image: 'https://images.unsplash.com/photo-1591604021695-0c69b7c05981?auto=format&fit=crop&w=1920&q=80',
+    image: '/images/islamic_lifestyle.jpg',
     titleEn: 'Masjid al-Haram',
     titleUr: 'مسجد الحرام',
     subtitleEn: 'Spiritual Peace',
     subtitleUr: 'روحانی سکون اور اطمینان'
   },
   {
-    image: 'https://images.unsplash.com/photo-1591604021695-0c69b7c05981?auto=format&fit=crop&w=1920&q=80',
+    image: '/images/makkah_hero.jpg',
     titleEn: 'Masjid an-Nabawi',
     titleUr: 'مسجد نبوی شریف',
     subtitleEn: 'The Prophet\'s City',
     subtitleUr: 'مدینہ منورہ کی روشنیاں'
   },
   {
-    image: 'https://images.unsplash.com/photo-1591604021695-0c69b7c05981?auto=format&fit=crop&w=1920&q=80',
+    image: '/images/islamic_lifestyle.jpg',
     titleEn: 'Sacred Pilgrimage',
     titleUr: 'مبارک عبادت',
     subtitleEn: 'Tailored With Trust',
     subtitleUr: 'بھروسے کے ساتھ ترتیب شدہ'
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1591604021695-0c69b7c05981?auto=format&fit=crop&w=1920&q=80',
-    titleEn: 'Desert Horizons',
-    titleUr: 'روحانی صحرا',
-    subtitleEn: 'Cinematic Elegance',
-    subtitleUr: 'خوبصورت اور پرسکون نظارے'
   }
 ];
 

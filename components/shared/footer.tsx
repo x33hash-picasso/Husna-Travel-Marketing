@@ -11,8 +11,8 @@ export default function Footer({ locale }: { locale: string }) {
 
   useEffect(() => {
     const loadLogo = async () => {
-      const storedLogo = await db.settings.get('site_logo', null);
-      if (storedLogo) setLogoUrl(storedLogo);
+      const storedLogo = await db.settings.get('site_logo', '/images/logo.jpeg');
+      setLogoUrl(storedLogo);
     };
     loadLogo();
   }, []);

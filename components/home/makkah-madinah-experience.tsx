@@ -6,8 +6,8 @@ import { Compass, ShieldCheck, HeartHandshake } from 'lucide-react';
 import { db } from '@/lib/supabase/client';
 
 const DEFAULT_JOURNEY = {
-  makkahImage: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=600&q=80',
-  madinahImage: 'https://images.unsplash.com/photo-1591604021695-0c69b7c05981?auto=format&fit=crop&w=600&q=80',
+  makkahImage: '/images/makkah_hero.jpg',
+  madinahImage: '/images/islamic_lifestyle.jpg',
   badgeEn: 'Spiritual Journey',
   badgeUr: 'روحانی جذبہ',
   titleEn: 'A Journey of Faith and Eternal Tranquility',
