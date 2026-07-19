@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { db } from '@/lib/supabase/client';
 import ImageUploader from '@/components/admin/image-uploader';
-import { Save, Plus, Trash2, ArrowUp, ArrowDown, Settings, Sliders } from 'lucide-react';
+import { Save, Plus, Trash2, ArrowUp, ArrowDown, Settings, Sliders, Compass } from 'lucide-react';
 
 const DEFAULT_SLIDES = [
   {
@@ -22,8 +22,27 @@ const DEFAULT_SLIDES = [
   }
 ];
 
+const DEFAULT_JOURNEY = {
+  makkahImage: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=600&q=80',
+  madinahImage: 'https://images.unsplash.com/photo-1591604021695-0c69b7c05981?auto=format&fit=crop&w=600&q=80',
+  badgeEn: 'Spiritual Journey',
+  badgeUr: 'روحانی جذبہ',
+  titleEn: 'A Journey of Faith and Eternal Tranquility',
+  titleUr: 'مقدس مقامات کی دلکش روحانی فضائیں',
+  descriptionEn: 'Husna Travel is built upon the pillars of absolute trust and luxury hospitality. We design journeys that elevate your spiritual experience, allowing you to immerse completely in worship, reflection, and historical exploration without any earthly worries.',
+  descriptionUr: 'ہمارا مشن آپ کو زندگی بھر کے سب سے یادگار اور مبارک سفر پر لے جانا ہے۔ مکہ مکرمہ کی پروقار فضاؤں اور مدینہ منورہ کے پرسکون گلیوں میں آپ کی آرام دہ اور پرسکون رہائش ہماری اولین ترجیح ہے۔',
+  f1TitleEn: 'Fully Certified and Registered',
+  f1TitleUr: 'سرکاری اور رجسٹرڈ کارپوریشن',
+  f1DescEn: 'Lincensed by the Ministry of Hajj & Umrah for complete verification and compliance.',
+  f1DescUr: 'وزارت مذہبی امور پاکستان سے رجسٹرڈ اور لائسنس یافتہ سفری ایجنسی۔',
+  f2TitleEn: 'Exceptional Pilgrim Care',
+  f2TitleUr: 'حقیقی مہمان نوازی اور خدمت',
+  f2DescEn: 'From visa processing and hotels to Islamic wellness products delivered right to your doorstep.',
+  f2DescUr: 'سفر، ویزا اور ہوٹل سے لے کر کتب اور حرمین کے تبرکات تک مکمل دیکھ بھال۔'
+};
+
 export default function AdminSettingsPage() {
-  const [activeTab, setActiveTab] = useState<'general' | 'slider'>('general');
+  const [activeTab, setActiveTab] = useState<'general' | 'slider' | 'journey'>('general');
   
   // General settings state
   const [waNumber, setWaNumber] = useState('923001234567');
@@ -33,6 +52,10 @@ export default function AdminSettingsPage() {
 
   // Slider state
   const [slides, setSlides] = useState<any[]>([]);
+
+  // Journey state
+  const [journeyData, setJourneyData] = useState<any>(DEFAULT_JOURNEY);
+
   const [loading, setLoading] = useState(true);
   const [saved, setSaved] = useState(false);
 
@@ -52,6 +75,9 @@ export default function AdminSettingsPage() {
 
         const dbSlides = await db.settings.get('hero_slides', DEFAULT_SLIDES);
         setSlides(dbSlides);
+
+        const dbJourney = await db.settings.get('journey_settings', DEFAULT_JOURNEY);
+        setJourneyData(dbJourney);
       } catch (e) {
         console.error(e);
       } finally {
@@ -81,6 +107,15 @@ export default function AdminSettingsPage() {
     setTimeout(() => setSaved(false), 2000);
   };
 
+  const handleSaveJourney = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    await db.settings.set('journey_settings', journeyData);
+    setSaved(true);
+    setLoading(false);
+    setTimeout(() => setSaved(false), 2000);
+  };
+
   const updateSlideField = (index: number, field: string, value: any) => {
     const updated = [...slides];
     updated[index] = { ...updated[index], [field]: value };
@@ -91,6 +126,10 @@ export default function AdminSettingsPage() {
     const updated = [...slides];
     updated[index] = { ...updated[index], image: imgUrls[0] || '' };
     setSlides(updated);
+  };
+
+  const updateJourneyField = (field: string, value: any) => {
+    setJourneyData((prev: any) => ({ ...prev, [field]: value }));
   };
 
   const addSlide = () => {
@@ -136,7 +175,7 @@ export default function AdminSettingsPage() {
       <div>
         <h1 className="text-3xl font-serif font-black text-emerald-dark">Configuration Settings</h1>
         <p className="text-xs font-semibold text-text-soft uppercase tracking-widest mt-1">
-          Customize contact information and dynamic homepage sliders
+          Customize contact information, hero sliders, and storytelling highlights
         </p>
       </div>
 
@@ -160,11 +199,20 @@ export default function AdminSettingsPage() {
           <Sliders className="w-4 h-4" />
           <span>Homepage Hero Slider</span>
         </button>
+        <button
+          onClick={() => setActiveTab('journey')}
+          className={`pb-3 px-2 text-xs uppercase font-extrabold tracking-wider transition-colors cursor-pointer flex items-center gap-1.5 ${
+            activeTab === 'journey' ? 'border-b-2 border-emerald-medium text-emerald-dark' : 'text-text-soft hover:text-text-secondary'
+          }`}
+        >
+          <Compass className="w-4 h-4" />
+          <span>Journey & Story Details</span>
+        </button>
       </div>
 
       {saved && (
         <div className="bg-emerald-lighter border border-emerald-medium/20 text-emerald-dark px-4 py-3 rounded-xl text-xs font-bold font-sans shadow-sm transition-all duration-300">
-          ✓ Setting options saved successfully! Changes are updated on the homepage.
+          ✓ Setting options saved successfully! Changes are updated on the website in real-time.
         </div>
       )}
 
@@ -340,6 +388,200 @@ export default function AdminSettingsPage() {
               </button>
             </div>
           </div>
+        </div>
+      )}
+
+      {/* TAB CONTENT: Journey Section */}
+      {activeTab === 'journey' && (
+        <div className="bg-primary-bg p-6 md:p-8 rounded-3xl border border-gray-150 shadow-sm">
+          <form onSubmit={handleSaveJourney} className="flex flex-col gap-6 text-xs text-text-secondary font-semibold">
+            <h3 className="font-serif font-bold text-lg text-emerald-dark border-b border-gray-100 pb-2 mb-2">
+              A Journey of Faith Section Settings
+            </h3>
+
+            {/* Images Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-6 border-b border-gray-100">
+              <div className="flex flex-col gap-2">
+                <label className="text-xs font-bold uppercase text-text-secondary">Makkah Showcase Image</label>
+                <ImageUploader
+                  images={journeyData.makkahImage ? [journeyData.makkahImage] : []}
+                  onChange={(urls) => updateJourneyField('makkahImage', urls[0] || '')}
+                  folder="journey"
+                />
+              </div>
+              <div className="flex flex-col gap-2">
+                <label className="text-xs font-bold uppercase text-text-secondary">Madinah Showcase Image</label>
+                <ImageUploader
+                  images={journeyData.madinahImage ? [journeyData.madinahImage] : []}
+                  onChange={(urls) => updateJourneyField('madinahImage', urls[0] || '')}
+                  folder="journey"
+                />
+              </div>
+            </div>
+
+            {/* Badges and Titles */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="flex flex-col gap-1.5">
+                <label className="text-xs font-bold uppercase">Badge Text (English)</label>
+                <input
+                  type="text"
+                  value={journeyData.badgeEn || ''}
+                  onChange={(e) => updateJourneyField('badgeEn', e.target.value)}
+                  className="border border-gray-300 rounded-lg px-3 py-2.5 outline-none"
+                />
+              </div>
+              <div className="flex flex-col gap-1.5 text-right">
+                <label className="text-xs font-bold uppercase block">Badge Text (Urdu)</label>
+                <input
+                  type="text"
+                  value={journeyData.badgeUr || ''}
+                  onChange={(e) => updateJourneyField('badgeUr', e.target.value)}
+                  className="border border-gray-300 rounded-lg px-3 py-2.5 outline-none text-right font-bold"
+                />
+              </div>
+
+              <div className="flex flex-col gap-1.5">
+                <label className="text-xs font-bold uppercase">Section Title (English)</label>
+                <input
+                  type="text"
+                  value={journeyData.titleEn || ''}
+                  onChange={(e) => updateJourneyField('titleEn', e.target.value)}
+                  className="border border-gray-300 rounded-lg px-3 py-2.5 outline-none"
+                />
+              </div>
+              <div className="flex flex-col gap-1.5 text-right">
+                <label className="text-xs font-bold uppercase block">Section Title (Urdu)</label>
+                <input
+                  type="text"
+                  value={journeyData.titleUr || ''}
+                  onChange={(e) => updateJourneyField('titleUr', e.target.value)}
+                  className="border border-gray-300 rounded-lg px-3 py-2.5 outline-none text-right font-bold"
+                />
+              </div>
+            </div>
+
+            {/* Descriptions */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pb-6 border-b border-gray-100">
+              <div className="flex flex-col gap-1.5">
+                <label className="text-xs font-bold uppercase">Description Details (English)</label>
+                <textarea
+                  value={journeyData.descriptionEn || ''}
+                  onChange={(e) => updateJourneyField('descriptionEn', e.target.value)}
+                  rows={4}
+                  className="border border-gray-300 rounded-lg px-3 py-2.5 outline-none resize-none font-light"
+                />
+              </div>
+              <div className="flex flex-col gap-1.5 text-right">
+                <label className="text-xs font-bold uppercase block">Description Details (Urdu)</label>
+                <textarea
+                  value={journeyData.descriptionUr || ''}
+                  onChange={(e) => updateJourneyField('descriptionUr', e.target.value)}
+                  rows={4}
+                  className="border border-gray-300 rounded-lg px-3 py-2.5 outline-none resize-none text-right font-bold"
+                />
+              </div>
+            </div>
+
+            {/* Feature 1 */}
+            <h4 className="text-xs uppercase font-extrabold text-emerald-dark tracking-widest mt-2">
+              Feature Point #1
+            </h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="flex flex-col gap-1.5">
+                <label className="text-[10px] text-text-soft uppercase tracking-wider">Feature Title (English)</label>
+                <input
+                  type="text"
+                  value={journeyData.f1TitleEn || ''}
+                  onChange={(e) => updateJourneyField('f1TitleEn', e.target.value)}
+                  className="border border-gray-300 rounded-lg px-3 py-2 outline-none"
+                />
+              </div>
+              <div className="flex flex-col gap-1.5 text-right">
+                <label className="text-[10px] text-text-soft uppercase tracking-wider block">Feature Title (Urdu)</label>
+                <input
+                  type="text"
+                  value={journeyData.f1TitleUr || ''}
+                  onChange={(e) => updateJourneyField('f1TitleUr', e.target.value)}
+                  className="border border-gray-300 rounded-lg px-3 py-2 outline-none text-right"
+                />
+              </div>
+
+              <div className="flex flex-col gap-1.5">
+                <label className="text-[10px] text-text-soft uppercase tracking-wider">Feature Description (English)</label>
+                <input
+                  type="text"
+                  value={journeyData.f1DescEn || ''}
+                  onChange={(e) => updateJourneyField('f1DescEn', e.target.value)}
+                  className="border border-gray-300 rounded-lg px-3 py-2 outline-none"
+                />
+              </div>
+              <div className="flex flex-col gap-1.5 text-right">
+                <label className="text-[10px] text-text-soft uppercase tracking-wider block">Feature Description (Urdu)</label>
+                <input
+                  type="text"
+                  value={journeyData.f1DescUr || ''}
+                  onChange={(e) => updateJourneyField('f1DescUr', e.target.value)}
+                  className="border border-gray-300 rounded-lg px-3 py-2 outline-none text-right font-normal"
+                />
+              </div>
+            </div>
+
+            {/* Feature 2 */}
+            <h4 className="text-xs uppercase font-extrabold text-emerald-dark tracking-widest mt-2">
+              Feature Point #2
+            </h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="flex flex-col gap-1.5">
+                <label className="text-[10px] text-text-soft uppercase tracking-wider">Feature Title (English)</label>
+                <input
+                  type="text"
+                  value={journeyData.f2TitleEn || ''}
+                  onChange={(e) => updateJourneyField('f2TitleEn', e.target.value)}
+                  className="border border-gray-300 rounded-lg px-3 py-2 outline-none"
+                />
+              </div>
+              <div className="flex flex-col gap-1.5 text-right">
+                <label className="text-[10px] text-text-soft uppercase tracking-wider block">Feature Title (Urdu)</label>
+                <input
+                  type="text"
+                  value={journeyData.f2TitleUr || ''}
+                  onChange={(e) => updateJourneyField('f2TitleUr', e.target.value)}
+                  className="border border-gray-300 rounded-lg px-3 py-2 outline-none text-right"
+                />
+              </div>
+
+              <div className="flex flex-col gap-1.5">
+                <label className="text-[10px] text-text-soft uppercase tracking-wider">Feature Description (English)</label>
+                <input
+                  type="text"
+                  value={journeyData.f2DescEn || ''}
+                  onChange={(e) => updateJourneyField('f2DescEn', e.target.value)}
+                  className="border border-gray-300 rounded-lg px-3 py-2 outline-none"
+                />
+              </div>
+              <div className="flex flex-col gap-1.5 text-right">
+                <label className="text-[10px] text-text-soft uppercase tracking-wider block">Feature Description (Urdu)</label>
+                <input
+                  type="text"
+                  value={journeyData.f2DescUr || ''}
+                  onChange={(e) => updateJourneyField('f2DescUr', e.target.value)}
+                  className="border border-gray-300 rounded-lg px-3 py-2 outline-none text-right"
+                />
+              </div>
+            </div>
+
+            {/* Save Button */}
+            <div className="flex justify-end border-t border-gray-150 pt-6 mt-4">
+              <button
+                type="submit"
+                className="px-6 py-3 bg-emerald-medium hover:bg-emerald-dark text-white font-bold text-xs uppercase tracking-wider rounded-lg transition-colors cursor-pointer shadow-md flex items-center gap-1.5 font-sans"
+              >
+                <Save className="w-4 h-4" />
+                <span>Save Journey Configuration</span>
+              </button>
+            </div>
+
+          </form>
         </div>
       )}
 
